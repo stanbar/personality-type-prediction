@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on MBTI Predictions</title>
+    <link>http://mbti.stan.bar/tags/</link>
+    <description>Recent content in Tags on MBTI Predictions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://mbti.stan.bar/tags/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
