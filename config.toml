@@ -1,0 +1,4 @@
+baseURL = 'http://mbti.stan.bar/'
+languageCode = 'en-us'
+title = 'MBTI Predictions'
+theme = "ananke"
