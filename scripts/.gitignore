@@ -2,3 +2,5 @@ venv
 input
 .env
 .ipynb_checkpoints/
+__pycache__
+data
