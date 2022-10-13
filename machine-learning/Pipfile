@@ -15,6 +15,9 @@ seaborn = "*"
 wordcloud = "*"
 transformers = {extras = ["torch"], version = "*"}
 imbalanced-learn = "*"
+tensorflow-metal = "*"
+keras = "*"
+tensorflow-macos = "*"
 
 [dev-packages]
 jupyterlab = "*"

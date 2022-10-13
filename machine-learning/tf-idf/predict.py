@@ -70,21 +70,39 @@ if __name__ == "__main__":
     t = time.time()
 
 
+    # base dataset path. You should place directories containing textes to be predicted.
+    dataset_path = str(Path.home())+ '/dataset/'
+
+    def collect_entries_for(directory_name: str):
+        return [os.path.join(dirname, filename) \
+                for dirname, _, filenames in os.walk(dataset_path + directory_name) \
+                 for filename in filenames if filename != '.DS_Store']
 
 
-    stasbar_texts =[]
+    journals_texts = collect_entries_for('journals')
 
-    # Move to common dataset reposityory
-    # Consider creating ~/datasets/ directory
-    for dirname, _, filenames in os.walk(str(Path.home())+'/dataset/stasbar'):
-        for filename in filenames:
-            stasbar_texts.append(os.path.join(dirname, filename))
+    stanbar_texts = collect_entries_for('stanbar')
 
-    for file in stasbar_texts:
+    # Derek Sivers's texts, he has a lot of texts and is known as INTJ
+    sivers_texts = collect_entries_for('sivers')
+
+    # Tim Ferris's texts, he has a lot of texts and is known as INTJ
+    ferris_texts = collect_entries_for('ferriss')
+
+
+    for file in ferris_texts:
         print(file)
         lines = [line for line in [line.strip() for line in open(file).readlines()] if line]
         text = " ".join(lines)
-        truncated = text[:1024] if len(text) > 1024 else text
+
+
+#         if len(text) > 1024:
+#             print(f"The text in {file} has been truncated by {len(text)-1024} chars ({(len(text)-1024)/len(text)} %)")
+#             truncated = text[:1024]
+#         else:
+#             truncated = text
+        # prediction = predict(truncated)
+
         prediction = predict(text)
         print(file, prediction)
         print("-----------------------------------------------------")
