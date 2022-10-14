@@ -8,6 +8,7 @@ This repository combines multiple MBTI prediction algorithms.
 
 Prerequisitions:
 1. Download MBTI dataset from https://www.kaggle.com/datasets/datasnaek/mbti-type and save `mbti_1.csv` into `/data`.
+2. Create dataset directory at `mkdir ~/dataset/`, and place there your datasets you want to predict, e.g. all texts written by Tim Ferriss should be placed at `~/dataset/ferriss/`.
 
 
 TODO:
