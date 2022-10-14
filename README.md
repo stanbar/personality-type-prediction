@@ -1,1 +1,1 @@
-# mbti-prediction
+# Personality Type Prediction

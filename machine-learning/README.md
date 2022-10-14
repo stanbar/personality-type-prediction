@@ -49,5 +49,5 @@ TODO:
 
 This is an approach based on [ianscottknight/Predicting-Myers-Briggs-Type-Indicator-with-Recurrent-Neural-Networks](https://github.com/ianscottknight/Predicting-Myers-Briggs-Type-Indicator-with-Recurrent-Neural-Networks).
 
-It has not been tested and implemented yet.
+`rnn/README.md` describes the steps to train and run the prediction.
 
