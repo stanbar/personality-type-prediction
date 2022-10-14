@@ -1,0 +1,6 @@
+*** P/J TEST SET CLASSIFICATION (POSTS) ***
+Total posts classified: 21177
+Accuracy: 0.4347641308967276
+Confusion matrix: 
+[[ 9207,     0],
+ [11970,     0]]
