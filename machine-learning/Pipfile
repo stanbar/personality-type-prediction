@@ -18,6 +18,8 @@ imbalanced-learn = "*"
 tensorflow-metal = "*"
 keras = "*"
 tensorflow-macos = "*"
+datasets = "*"
+evaluate = "*"
 
 [dev-packages]
 jupyterlab = "*"
