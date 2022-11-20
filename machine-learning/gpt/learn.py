@@ -2,6 +2,7 @@ import csv
 from transformers import AutoTokenizer, DataCollatorWithPadding, AutoModelForSequenceClassification, TrainingArguments, Trainer
 from datasets import load_dataset, SplitGenerator, Split, ClassLabel, load_metric
 import numpy as np
+from utils import clean_text
 
 c2l = ClassLabel(names=[
                      "INTJ", "INTP", "ENTJ", "ENTP", 
@@ -18,6 +19,7 @@ print(dataset)
 tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
 def preprocess_function(batch):
+    # clean text
     tokenized = tokenizer(batch["text"], truncation=True)
     tokenized["label"] = c2l.str2int(batch["label"])
     return tokenized
@@ -28,12 +30,12 @@ data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
 model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(c2l.names))
 
-# metric = load_metric("accuracy")
+metric = load_metric("accuracy")
  
-# def compute_metrics(eval_pred):
-#     logits, labels = eval_pred
-#     predictions = np.argmax(logits, axis=-1)
-#     return metric.compute(predictions=predictions, references=labels)
+def compute_metrics(eval_pred):
+    logits, labels = eval_pred
+    predictions = np.argmax(logits, axis=-1)
+    return metric.compute(predictions=predictions, references=labels)
 
 training_args = TrainingArguments(
     output_dir="./results",
@@ -54,10 +56,13 @@ trainer = Trainer(
     eval_dataset=tokenized_set["test"],
     tokenizer=tokenizer,
     data_collator=data_collator,
-    # compute_metrics=compute_metrics,
+    compute_metrics=compute_metrics,
 )
 
 trainer.train()
+print("Training done")
+trainer.save_model("model")
+print("Model saved")
 trainer.evaluate()
-trainer.predict("I am the best")
+print("Evaluation done")
 trainer.push_to_hub()
