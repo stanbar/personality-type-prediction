@@ -4,7 +4,8 @@ This repository combines multiple MBTI prediction algorithms.
 1. Naive Bayes Classifier from [TGDivy/MBTI-Personality-Classifier](https://github.com/TGDivy/MBTI-Personality-Classifier/blob/master/MBTI%20personality%20classifier.ipynb).
 2. TF-IDF Logistic Regression Model from [esharma3/myers-briggs-personality-prediction](https://github.com/esharma3/myers-briggs-personality-prediction).
 3. RNN from [ianscottknight/Predicting-Myers-Briggs-Type-Indicator-with-Recurrent-Neural-Networks](https://github.com/ianscottknight/Predicting-Myers-Briggs-Type-Indicator-with-Recurrent-Neural-Networks).
-4. BERT
+4. BERTerfly from [MLH-Fellowship/Social-BERTerfly](https://github.com/MLH-Fellowship/Social-BERTerfly/tree/main/server)
+5. BERT my implementation.
 
 Prerequisitions:
 1. Download MBTI dataset from https://www.kaggle.com/datasets/datasnaek/mbti-type and save `mbti_1.csv` into `/data`.
@@ -53,10 +54,15 @@ This is an approach based on [ianscottknight/Predicting-Myers-Briggs-Type-Indica
 
 `rnn/README.md` describes the steps to train and run the prediction.
 
- ## BERT
+ ## BERTerfly
 
 This is an approach based on [MLH-Fellowship/Social-BERTerfly](https://github.com/MLH-Fellowship/Social-BERTerfly/tree/main/server).
 
 
-`bert/README.md` describes the steps to train and run the prediction.
+`BERTerfly/README.md` describes the steps to train and run the prediction.
 
+## BERT
+
+This is my implementation on BERT using huggingface pipline. Probably the simplest.
+
+`bert/README.md` describes the steps to train and run the prediction.
